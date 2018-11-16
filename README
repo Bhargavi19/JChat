@@ -1,0 +1,13 @@
+For this, to run successfully  you need to have the following installed:
+1. MySQL
+
+Here are the steps to use this Mail system :
+1. If you are running this system for the first time then, Run TestDB.java (With the appropriate username and password for your mysql database)
+else proceed to Step 2.
+2. Run Server.java
+3. Create a client by running Client.java. 
+i. To login, enter your ID and pw. If you enter "exit" in the email ID field, you exit from client program. 
+(The list of permissible IDs and pw you can use are specified in IDlist.txt)
+ii. After login from the displayed list, to check your inbox - use option 1; to compose a mail - use option 2 ;
+to logout - use option 3.
+		 
