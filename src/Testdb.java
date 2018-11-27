@@ -26,11 +26,11 @@ public class Testdb {
       stmt = conn.createStatement();
       
       String sql = "CREATE DATABASE IF NOT EXISTS Mail";
-      String table1 = "CREATE TABLE If not exists Mail.`messages` ( `sender` varchar(15) DEFAULT NULL,`recepient` varchar(15) DEFAULT NULL, `body` varchar(25) DEFAULT NULL)";
-      String table2 = "CREATE TABLE if not exists Mail.`userCreds` (`username` varchar(15) DEFAULT NULL,`password` varchar(15) DEFAULT NULL )";
+      String table1 = "CREATE TABLE If not exists Mail.messages ( sender varchar(15) DEFAULT NULL,recepient varchar(15) DEFAULT NULL, body varchar(25) DEFAULT NULL)";
+      String table2 = "CREATE TABLE if not exists Mail.userCreds ( username varchar(15) DEFAULT NULL,password varchar(15) DEFAULT NULL )";
       stmt.executeUpdate(sql);
-      stmt.executeUpdate(sql);
-      stmt.executeUpdate(sql);
+      stmt.executeUpdate(table1);
+      stmt.executeUpdate(table2);
       //insertdefaultvalues();
       String ins = "insert ignore into Mail.userCreds values ('karthik', 'karthik');";	   
       stmt.executeUpdate(ins);
