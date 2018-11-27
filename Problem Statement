@@ -1,0 +1,7 @@
+1. Simple Search engine: Create a web-page with a Text-box, where you can enter any keyword. From a pre-defined corpus, you should be able to retrieve a set of links for few some documents based on the keyword. On clicking the link, show those pages.
+    * Make sure the search is meaningful. Not too worried about page-ranking.
+    * Pre-create some static HTML pages and keep it in a back-end.
+    * Provide a way to navigate back to the search page after displaying the result.
+    * No need for any login screen.
+
+[HINT: Use Tomcat as a web-container. Elastic Search can be used for searching.]
