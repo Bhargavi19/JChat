@@ -10,4 +10,8 @@ i. To login, enter your ID and pw. If you enter "exit" in the email ID field, yo
 (The list of permissible IDs and pw you can use are specified in IDlist.txt)
 ii. After login from the displayed list, to check your inbox - use option 1 (first column shows sender and the remaining is the message); to compose a mail - use option 2 ;
 to logout - use option 3.
+
+DDL for messages : CREATE TABLE If not exists Mail.messages ( sender varchar(15) DEFAULT NULL,recepient varchar(15) DEFAULT NULL, body varchar(25) DEFAULT NULL)
+
+DDL for userCreds : CREATE TABLE if not exists Mail.userCreds (username varchar(15) DEFAULT NULL,password varchar(15) DEFAULT NULL )
 		 
