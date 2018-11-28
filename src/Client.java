@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Client {
 
-	public static void main(String args[]) throws Exception, NotSerializableException {
+	public static void main(String args[]) throws IOException {
 		Socket s = new Socket("localhost", 3333);
 		DataInputStream din = new DataInputStream(s.getInputStream());
 		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
@@ -17,12 +17,12 @@ public class Client {
 		int choice;
 
 		while (true) {
-			// authenticating login credentials if not logged in
+			//Authenticating login credentials if not logged in
 			if (loggedin == 0) {
 				System.out.println("User : ");
 				uname = br.readLine();
 				if (uname.equals("exit")) {
-					// 3 for exit in server
+					//3 for exit in server
 					dout.writeInt(3);
 					break;
 				}
@@ -42,13 +42,14 @@ public class Client {
 				if (choice != 3)
 					dout.writeInt(choice);
 				switch (choice) {
+				//Retrieves and displays inbox for the current user
 				case 1:
 					dout.writeUTF(uname);
 					dout.flush();
 					inbox = din.readUTF();
 					System.out.println(inbox);
-
 					break;
+				//Composes a new mail and sends it to server
 				case 2:
 					Mail newMail = new Mail();
 					newMail.from = uname;
@@ -59,7 +60,8 @@ public class Client {
 					dout.writeUTF(newMail.from);
 					dout.writeUTF(newMail.to);
 					dout.writeUTF(newMail.body);
-					break;
+					break;					
+				//Logs current user out
 				case 3:
 					loggedin = 0;
 					continue;
